@@ -29,7 +29,8 @@
         return [numbers sortedArrayUsingSelector:@selector(compare:)];
     }
     
-   NSArray *result = [NSArray arrayWithObjects:[numbers sortedArrayUsingSelector:@selector(compare:)],[words sortedArrayUsingSelector:@selector(compare:)], nil];
+    NSSortDescriptor *sortDescription = [NSSortDescriptor sortDescriptorWithKey:nil ascending:NO];
+    NSArray *result = [NSArray arrayWithObjects:[numbers sortedArrayUsingSelector:@selector(compare:)],[words sortedArrayUsingDescriptors:@[sortDescription]], nil];
     return result;
 }
 
